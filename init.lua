@@ -11,8 +11,8 @@ vim.g.have_nerd_font = true
 -- See `:help vim.o`
 --  For more options, you can see `:help option-list`
 --  Indent options.
-vim.o.sts = 2
-vim.o.ts = 2
+vim.o.sts = 4
+vim.o.ts = 4
 vim.o.sw = 0
 -- Make line numbers default
 vim.o.number = true
@@ -782,20 +782,16 @@ require('lazy').setup({
     },
   },
 
-  { -- You can easily change to a different colorscheme.
-    -- Change the name of the colorscheme plugin below, and then
-    -- change the command in the config to whatever the name of that colorscheme is.
-    --
-    -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
-    'sainnhe/gruvbox-material',
-    lazy = false,
+  {
+    'catppuccin/nvim',
     priority = 1000,
+    name = 'catppuccin',
+    opts = {
+      flavour = 'mocha',
+    },
+
     config = function()
-      -- Optionally configure and load the colorscheme
-      -- directly inside the plugin declaration.
-      vim.g.gruvbox_material_enable_italic = true
-      vim.g.gruvbox_material_background = 'hard'
-      vim.cmd.colorscheme 'gruvbox-material'
+      vim.cmd.colorscheme 'catppuccin'
     end,
   },
 
